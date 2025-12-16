@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -O3 -DNDEBUG CMakeFiles/hawking_radiation.dir/black_hole.cpp.o CMakeFiles/hawking_radiation.dir/main.cpp.o -o bin/hawking_radiation  -lm 
