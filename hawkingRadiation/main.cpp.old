@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include "hawking.hpp"
+
+int main(){
+    Params P;
+    P.M = 1.0;
+    P.a = 0.7;
+    P.s = -2;
+    P.l = 2;
+    P.m = 2;
+
+    RadialTeukolsky solver(1.0001, 80.0, 8000);
+
+    std::ofstream f("spectrum.csv");
+    f << "omega, Gamma, dEdtdw\n";
+
+    for (double w = 0.01; w < 2.0; w += 0.01) {
+        P.omega = w;
+
+        auto sol = solver.integrate(P);
+        double Gamma = computeGreybody(sol, P);
+        double dEdtdw = hawkingSpectrum(P, Gamma);
+
+        f << w << "," << Gamma << "," << dEdtdw << "\n";
+        std::cout << "ω=" << w << "  Γ=" << Gamma << "\n";
+    }
+}
+
