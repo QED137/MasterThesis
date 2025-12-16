@@ -22,7 +22,7 @@ Computes thermal emission spectra for:
 
 ![Hawking Radiation Spectra](hawkingPage/build/page_spectra_1976.png)
 
-*Hawking radiation power spectra reproducing Don Page (1976) Figure 1.*
+*Hawking radiation power spectra*
 
 **See [hawkingPage/README.md](hawkingPage/README.md) for detailed build and run instructions.**
 
