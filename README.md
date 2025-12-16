@@ -6,17 +6,17 @@ This repository contains the computational implementation of my master thesis wo
 
 This project provides numerical simulations and computational tools for studying:
 - **Hawking Radiation**: Calculation of thermal emission from black holes
-
+- **Page Curve**: Modeling black hole information paradox and entropy evolution
 - **Teukolsky Equation**: Solutions for perturbations in Kerr black hole spacetimes
 
 ## Project Structure
 
-### `/hawkingRadiation`
-Simulation of Hawking radiation emission and greybody factors:
-- `hawking.cpp/hpp`: Core Hawking radiation calculations
-- `greybody.cpp/hpp`: Greybody factor computations
-- `teukolsky_radial.cpp/hpp`: Radial solutions to the Teukolsky equation
-- `page_spectrum_all_species.csv`: Calculated particle spectra data
+### `/hawkingPage`
+Page curve calculations for black hole evaporation:
+- `black_hole.cpp/h`: Black hole thermodynamics implementation
+- `main.cpp`: Hawking spectrum computation for scalar, photon, and graviton emissions
+- `normalise_graph.py`: Visualization following Don Page (1976) normalization
+- `bh_absorption`: Absorption cross-section calculations
 
 
 ### `/teukolskyEquation`
@@ -25,12 +25,6 @@ Numerical solutions to the Teukolsky equation:
 - `teukolsky2D.cpp`: 2D time-evolution solver
 - `visualize.py`: Visualization tools for solution data
 - `/data`: Time-series solution snapshots
-
-### `/hawkingRadiation/plottingData`
-Visualization scripts for analysis:
-- `plot_page_spectrum.py`: Page curve spectrum plots
-- `evaporation_curve.py`: Black hole evaporation timeline
-- `qnm_peaks.py`: Quasi-normal mode analysis
 
 ## Dependencies
 
@@ -47,8 +41,8 @@ Visualization scripts for analysis:
 git clone https://github.com/QED137/MasterThesis.git
 cd MasterThesis
 
-# Build Hawking radiation simulations
-cd hawkingRadiation
+# Build Page curve / Hawking spectrum code
+cd hawkingPage
 mkdir -p build && cd build
 cmake ..
 make -j
@@ -62,19 +56,28 @@ g++ -std=c++11 -O3 teukolsky2D.cpp -o teukolsky2D
 ## Usage
 
 ```bash
-# Run Hawking radiation calculation
-cd hawkingRadiation/build
-./hawking_radiation
+# Run Hawking spectrum calculation (computes scalar, photon, graviton spectra)
+cd hawkingPage/build
+./bin/hawking_radiation
+
+# Visualize spectra with Page (1976) normalization
+python3 ../normalise_graph.py page
+
+# Show greybody suppression factors
+python3 ../normalise_graph.py greybody
+
+# Other visualization options
+python3 ../normalise_graph.py neutrinos  # Include approximate neutrino curve
+python3 ../normalise_graph.py diagnose   # Diagnostic information
+python3 ../normalise_graph.py stats      # Print statistics only
 
 # Solve Teukolsky equation
 cd ../../teukolskyEquation
 ./teukolsky1D
 ./teukolsky2D
 
-# Visualize results
-python visualize.py
-cd ../hawkingRadiation/plottingData
-python plot_page_spectrum.py
+# Visualize Teukolsky solutions
+python3 visualize.py
 ```
 
 ## Future Development
