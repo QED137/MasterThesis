@@ -6,7 +6,6 @@ This repository contains the computational implementation of my master thesis wo
 
 This project provides numerical simulations and computational tools for studying:
 - **Hawking Radiation**: Calculation of thermal emission from black holes
-- **Page Curve**: Modeling black hole information paradox and entropy evolution
 - **Teukolsky Equation**: Solutions for perturbations in Kerr black hole spacetimes
 
 ## Project Structure
