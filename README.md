@@ -12,11 +12,15 @@ This project provides numerical simulations and computational tools for studying
 ## Project Structure
 
 ### `/hawkingPage`
-Page curve calculations for black hole evaporation:
-- `black_hole.cpp/h`: Black hole thermodynamics implementation
-- `main.cpp`: Hawking spectrum computation for scalar, photon, and graviton emissions
-- `normalise_graph.py`: Visualization following Don Page (1976) normalization
-- `bh_absorption`: Absorption cross-section calculations
+Hawking radiation spectra calculations for black hole evaporation.
+
+Computes thermal emission spectra for:
+- Scalar fields (spin-0)
+- Photons (spin-1)
+- Gravitons (spin-2)
+- Neutrinos (spin-1/2, fermions)
+
+**See [hawkingPage/README.md](hawkingPage/README.md) for detailed build and run instructions.**
 
 
 ### `/teukolskyEquation`
@@ -55,22 +59,19 @@ g++ -std=c++11 -O3 teukolsky2D.cpp -o teukolsky2D
 
 ## Usage
 
+### Hawking Radiation Simulations
+See detailed instructions in [hawkingPage/README.md](hawkingPage/README.md)
+
+Quick start:
 ```bash
-# Run Hawking spectrum calculation (computes scalar, photon, graviton spectra)
 cd hawkingPage/build
-./bin/hawking_radiation
+./bin/hawking_radiation all           # Compute all particle spectra
+python3 interpolation_spectra.py      # Create smooth interpolated data
+python3 plot_page_1976_exact.py page  # Generate Page (1976) style plots
+```
 
-# Visualize spectra with Page (1976) normalization
-python3 ../normalise_graph.py page
-
-# Show greybody suppression factors
-python3 ../normalise_graph.py greybody
-
-# Other visualization options
-python3 ../normalise_graph.py neutrinos  # Include approximate neutrino curve
-python3 ../normalise_graph.py diagnose   # Diagnostic information
-python3 ../normalise_graph.py stats      # Print statistics only
-
+### Teukolsky Equation Solver
+```bash
 # Solve Teukolsky equation
 cd ../../teukolskyEquation
 ./teukolsky1D

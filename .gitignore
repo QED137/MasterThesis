@@ -16,5 +16,19 @@ outputs/
 *.zip
 *.tar
 *.egg-info/
+*.dat
+*.backup
+*.bak
+*.old
+*.orig
+
+# Build artifacts
+build/bin/*
+
+*.o
+*.a
+*.so
+bin/
+CMakeFiles/
 
 hawkingRadiation
