@@ -18,10 +18,6 @@ Simulation of Hawking radiation emission and greybody factors:
 - `teukolsky_radial.cpp/hpp`: Radial solutions to the Teukolsky equation
 - `page_spectrum_all_species.csv`: Calculated particle spectra data
 
-### `/hawkingPage`
-Page curve calculations for black hole evaporation:
-- `black_hole.cpp/h`: Black hole thermodynamics implementation
-- `bh_absorption`: Absorption cross-section calculations
 
 ### `/teukolskyEquation`
 Numerical solutions to the Teukolsky equation:
@@ -69,10 +65,6 @@ g++ -std=c++11 -O3 teukolsky2D.cpp -o teukolsky2D
 # Run Hawking radiation calculation
 cd hawkingRadiation/build
 ./hawking_radiation
-
-# Generate Page curve data
-cd ../../hawkingPage/build
-./page_curve
 
 # Solve Teukolsky equation
 cd ../../teukolskyEquation
