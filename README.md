@@ -20,6 +20,10 @@ Computes thermal emission spectra for:
 - Gravitons (spin-2)
 - Neutrinos (spin-1/2, fermions)
 
+![Hawking Radiation Spectra](hawkingPage/build/page_spectra_1976.png)
+
+*Hawking radiation power spectra reproducing Don Page (1976) Figure 1.*
+
 **See [hawkingPage/README.md](hawkingPage/README.md) for detailed build and run instructions.**
 
 

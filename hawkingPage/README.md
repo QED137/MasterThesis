@@ -54,3 +54,9 @@ This generates a plot matching Don Page (1976) Figure 1 with:
   - Red: Gravitons (s=2)
   - Magenta (dashed): Neutrinos (s=1/2)
   - Black (thick): Total spectrum
+
+## Results
+
+![Hawking Radiation Spectra](build/page_spectra_1976.png)
+
+*Figure: Hawking radiation power spectra from a Schwarzschild black hole, reproducing Don Page (1976) Figure 1. Shows contributions from different particle species with proper angular momentum selection rules (l ≥ |s|) and thermal statistics (Bose-Einstein for bosons, Fermi-Dirac for neutrinos).*
