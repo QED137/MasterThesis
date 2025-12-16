@@ -261,6 +261,11 @@ def plot_page_1976_truly_final():
     print(f"  10^-2 × 10^21 = 10^19  ✓")
     print("="*70 + "\n")
     
+    # Save figure
+    output_file = 'page_spectra_1976.png'
+    plt.savefig(output_file, dpi=300, bbox_inches='tight')
+    print(f"Figure saved as: {output_file}")
+    
     plt.show()
 
 def main():
